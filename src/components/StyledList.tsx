@@ -9,23 +9,23 @@ import {
     makeStyles,
     Paper,
     Typography,
-} from '@material-ui/core';
-import React from 'react';
-import Typewriter from 'typewriter-effect';
-import { Link } from 'react-router-dom';
+} from "@material-ui/core";
+import React from "react";
+import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
     checkbox: {
-        '&$checked': {
-            color: '#F5B369',
+        "&$checked": {
+            color: "#F5B369",
         },
     },
     checked: {},
     grid: {
-        paddingTop: '10vh',
+        paddingTop: "10vh",
     },
     list: {
-        width: '30vw',
+        width: "30vw",
     },
 }));
 
@@ -37,7 +37,7 @@ const StyledList: React.FC = () => {
             <Typography variant="h5" component="div" gutterBottom>
                 <Typewriter
                     options={{
-                        cursor: '',
+                        cursor: "",
                     }}
                     onInit={(typewriter) => {
                         typewriter.changeDelay(80).typeString("Here's a slightly nicer list.").start();
@@ -91,7 +91,7 @@ const StyledList: React.FC = () => {
             <br />
 
             <Button variant="contained" color="secondary" component={Link} to="/">
-                {'Back to Home'}
+                {"Back to Home"}
             </Button>
         </Grid>
     );
