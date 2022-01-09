@@ -1,5 +1,6 @@
 import Home from './pages/Home';
 import StyledPage from './pages/StyledPage';
+import SearchPage from './pages/SearchPage';
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
+                        <Route path="/searchpage" element={<SearchPage />} />
                         <Route path="/styled" element={<StyledPage />} />
                         <Route path="/" element={<Home />} />
                     </Routes>
