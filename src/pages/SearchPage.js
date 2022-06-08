@@ -1,6 +1,8 @@
 import BasicList from "../components/BasicList";
 import SearchBar from "../components/SearchBar";
 import WebToolsList from "../components/WebToolsList";
+import {Button} from "@material-ui/core";
+import {Link} from "react-router-dom";
 import React, { useState, useEffect, createElement } from "react";
 
 const SearchPage = (props) => {
@@ -43,6 +45,10 @@ const SearchPage = (props) => {
             <WebToolsList webToolsList={filteredTools} />
             <p>{"Showing you the full list"}</p>
             <BasicList />
+            <br />
+            <Button variant="contained" color="secondary" component={Link} to="/">
+                {"Back to Home"}
+            </Button>
         </>
     );
 };

@@ -38,6 +38,13 @@ const Home: React.FC = () => {
                     {"Yes"}
                 </Button>
             )}
+            <br />
+            <br />
+            {isShowButton && (
+                <Button variant="contained" color="primary" component={Link} to="/searchpage">
+                    {"Jump to search page!"}
+                </Button>
+            )}
         </>
     );
 };
