@@ -15,9 +15,11 @@ const Home: React.FC = () => {
         setIsShowButton(true);
     };
 
+    const welcomeMessage = "Welcome to CVWO's sample react app! Here's a basic list for you to experiment with.";
+
     return (
         <>
-            <h3>{"Welcome to CVWO's sample react app! Here's a basic list for you to experiment with."}</h3>
+            <h3>{welcomeMessage}</h3>
             <br />
             <BasicList />
             <br />
