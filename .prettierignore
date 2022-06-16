@@ -1,0 +1,14 @@
+# Configure prettier to ignore these artifacts
+build
+coverage
+node_modules
+.cache
+dist
+
+# Webstorm config files
+.idea
+
+# Other usual files to ignore
+**/.git
+**/.svn
+**/.hg
