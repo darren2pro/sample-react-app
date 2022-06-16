@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "parcel-start": "parcel ./public/index.html",
+    "parcel-start": "parcel ./public/index.html --open",
     "parcel-build": "parcel build ./public/index.html --experimental-scope-hoisting",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
     "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix",
@@ -45,12 +45,6 @@
       "the associated dependencies and builds the app.",
       "For 'parcel-build' I add the --experimental-scope-hoisting flag to tree-shake (ask the software to inspect our",
       "use of the code and only include the functions that we're actually using in production — a process known as 'Tree Shaking'.)"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
     ]
   },
   "browserslist": {

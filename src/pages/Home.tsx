@@ -1,8 +1,8 @@
-import BasicList from "../components/BasicList";
-import React, { useState } from "react";
-import Typewriter from "typewriter-effect";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import BasicList from '../components/BasicList';
+import React, { useState } from 'react';
+import Typewriter from 'typewriter-effect';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
     const [isShowButton, setIsShowButton] = useState(false);
@@ -15,7 +15,8 @@ const Home: React.FC = () => {
         setIsShowButton(true);
     };
 
-    const welcomeMessage = "Welcome to CVWO's sample react app! Here's a basic list for you to experiment with.";
+    const welcomeMessage =
+        "Welcome to CVWO's sample react app! Here's a basic list for you to experiment with.";
 
     return (
         <>
@@ -36,15 +37,25 @@ const Home: React.FC = () => {
             />
             <br />
             {isShowButton && (
-                <Button variant="contained" color="primary" component={Link} to="/styled">
-                    {"Yes"}
+                <Button
+                    variant="contained"
+                    color="primary"
+                    component={Link}
+                    to="/styled"
+                >
+                    {'Yes'}
                 </Button>
             )}
             <br />
             <br />
             {isShowButton && (
-                <Button variant="contained" color="primary" component={Link} to="/searchpage">
-                    {"Jump to search page!"}
+                <Button
+                    variant="contained"
+                    color="primary"
+                    component={Link}
+                    to="/searchPage"
+                >
+                    {'Jump to search page!'}
                 </Button>
             )}
         </>

@@ -63,3 +63,12 @@ CSS nesting is another way of writing CSS selectors, in a more readable manner (
 
 I use ESLint and Prettier, with the config files in `.eslintrc.json` and `.prettier.json`. They are used together with 
 webstorm integration.
+
+## Common errors encountered while coding
+- Missing in [props validation](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md):
+You can fix this by providing the types statically using TypeScript using either `type` or `interface`. 
+_Interface is extendable but type is simply an alias._ 
+
+- Invalid configuration file `src\App.tsx`: JSON Error in `\sample-react-app\.prettierrc.json`. This occurs because 
+you use the IDE to create the file, and it is not strictly UTF-8 characters. Use VS code to create the file instead.
+[Link](https://stackoverflow.com/questions/70387394/prettier-invalid-configuration-file-even-though-the-file-is-straight-from-the-d)

@@ -1,49 +1,75 @@
-import React from "react";
+import React from 'react';
 
 const TodoApp: React.FC = (props) => {
     return (
         <div className="todoapp stack-large">
-            <h1>{"TodoMatic"}</h1>
+            <h1>{'TodoMatic'}</h1>
             <form>
                 <h2 className="label-wrapper">
                     <label htmlFor="new-todo-input" className="label__lg">
-                        {"What needs to be done?"}
+                        {'What needs to be done?'}
                     </label>
                 </h2>
-                <input type="text" id="new-todo-input" className="input input__lg" name="text" autoComplete="off" />
-                <button type="submit" className="btn btn__primary btn__lg" >
-                    {"Add"}
+                <input
+                    type="text"
+                    id="new-todo-input"
+                    className="input input__lg"
+                    name="text"
+                    autoComplete="off"
+                />
+                <button type="submit" className="btn btn__primary btn__lg">
+                    {'Add'}
                 </button>
             </form>
             <div className="filters btn-group stack-exception">
-                <button type="button" className="btn toggle-btn" aria-pressed="true">
-                    <span className="visually-hidden">{"Show "}</span>
+                <button
+                    type="button"
+                    className="btn toggle-btn"
+                    aria-pressed="true"
+                >
+                    <span className="visually-hidden">{'Show '}</span>
                     <span>all</span>
-                    <span className={"visually-hidden"}>{" Tasks"}</span>
+                    <span className={'visually-hidden'}>{' Tasks'}</span>
                 </button>
-                <button type="button" className="btn toggle-btn" aria-pressed="false">
-                    <span className="visually-hidden">{"Show "}</span>
+                <button
+                    type="button"
+                    className="btn toggle-btn"
+                    aria-pressed="false"
+                >
+                    <span className="visually-hidden">{'Show '}</span>
                     <span>Active</span>
-                    <span className={"visually-hidden"}>{" Tasks"}</span>
+                    <span className={'visually-hidden'}>{' Tasks'}</span>
                 </button>
-                <button type="button" className="btn toggle-btn" aria-pressed="false">
-                    <span className="visually-hidden">{"Show "}</span>
+                <button
+                    type="button"
+                    className="btn toggle-btn"
+                    aria-pressed="false"
+                >
+                    <span className="visually-hidden">{'Show '}</span>
                     <span>Completed</span>
-                    <span className="visually-hidden">{" Tasks"}</span>
+                    <span className="visually-hidden">{' Tasks'}</span>
                 </button>
             </div>
-            <h2 id="list-heading">
-                3 tasks remaining
-            </h2>
+            <h2 id="list-heading">3 tasks remaining</h2>
             {
                 // The role of list is needed because the css will break that functionality. We must explicitly state that it is a list to
                 // restore the list role. ARIA is a set of roles and attributes that help to make HTML webpages more
                 // accessible to people with disabilities.
             }
-            <ul role="list" className="todo-list stack-large stack-exception" aria-labelledby="list-heading">
+
+            {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+            <ul
+                role="list"
+                className="todo-list stack-large stack-exception"
+                aria-labelledby="list-heading"
+            >
                 <li className="todo stack-small">
                     <div className="c-cb">
-                        <input id="todo-0" type="checkbox" defaultChecked={true} />
+                        <input
+                            id="todo-0"
+                            type="checkbox"
+                            defaultChecked={true}
+                        />
                         <label className="todo-label" htmlFor="todo-0">
                             Eat
                         </label>
@@ -70,12 +96,13 @@ const TodoApp: React.FC = (props) => {
                             Edit <span className="visually-hidden">Sleep</span>
                         </button>
                         <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Sleep</span>
+                            Delete{' '}
+                            <span className="visually-hidden">Sleep</span>
                         </button>
                     </div>
                 </li>
 
-                <li className="todo stack-small" >
+                <li className="todo stack-small">
                     <div className="c-cb">
                         <input id="todo-2" type="checkbox" />
                         <label className="todo-label" htmlFor="todo-2">
@@ -94,6 +121,6 @@ const TodoApp: React.FC = (props) => {
             </ul>
         </div>
     );
-}
+};
 
 export default TodoApp;
