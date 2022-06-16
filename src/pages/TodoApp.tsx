@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from '../components/Todo';
 
 const TodoApp: React.FC = (props) => {
     return (
@@ -51,11 +52,11 @@ const TodoApp: React.FC = (props) => {
                 </button>
             </div>
             <h2 id="list-heading">3 tasks remaining</h2>
-            {
-                // The role of list is needed because the css will break that functionality. We must explicitly state that it is a list to
-                // restore the list role. ARIA is a set of roles and attributes that help to make HTML webpages more
-                // accessible to people with disabilities.
-            }
+            {/*
+                The role of list is needed because the css will break that functionality. We must explicitly state that it is a list to
+                restore the list role. ARIA is a set of roles and attributes that help to make HTML webpages more
+                accessible to people with disabilities.
+            */}
 
             {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
             <ul
@@ -63,61 +64,9 @@ const TodoApp: React.FC = (props) => {
                 className="todo-list stack-large stack-exception"
                 aria-labelledby="list-heading"
             >
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input
-                            id="todo-0"
-                            type="checkbox"
-                            defaultChecked={true}
-                        />
-                        <label className="todo-label" htmlFor="todo-0">
-                            Eat
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Eat</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Eat</span>
-                        </button>
-                    </div>
-                </li>
-
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input id="todo-1" type="checkbox" />
-                        <label className="todo-label" htmlFor="todo-1">
-                            Sleep
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Sleep</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete{' '}
-                            <span className="visually-hidden">Sleep</span>
-                        </button>
-                    </div>
-                </li>
-
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input id="todo-2" type="checkbox" />
-                        <label className="todo-label" htmlFor="todo-2">
-                            Code
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Code</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Code</span>
-                        </button>
-                    </div>
-                </li>
+                <Todo name={'Eat'} isCompleted={true} id="todo-0" />
+                <Todo name={'Sleep'} isCompleted={false} id="todo-0" />
+                <Todo name={'Repeat'} isCompleted={false} id="todo-0" />
             </ul>
         </div>
     );

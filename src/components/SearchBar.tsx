@@ -8,7 +8,7 @@ type searchBarProps = {
 const SearchBar = (props: searchBarProps) => {
     return (
         <input
-            className="input input__lg1"
+            className="input__lg1"
             value={props.input ? props.input : ''}
             placeholder="search web dev tools/concepts"
             onChange={(e) => props.onChange(e.target.value)}

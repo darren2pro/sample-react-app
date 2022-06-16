@@ -3745,28 +3745,28 @@ var __assign = void 0 && (void 0).__assign || function () {
 var BasicList = function () {
   return (0, _jsxRuntime.jsxs)("div", __assign({
     style: {
-      width: "25vw",
-      margin: "auto",
-      textAlign: "center"
+      width: '25vw',
+      margin: 'auto',
+      textAlign: 'center'
     }
   }, {
     children: [(0, _jsxRuntime.jsx)("h4", {
-      children: "Some web development tools/concepts:"
+      children: 'Some web development tools/concepts:'
     }, void 0), (0, _jsxRuntime.jsxs)("ul", {
       children: [(0, _jsxRuntime.jsx)("li", {
-        children: "Frontend"
+        children: 'Frontend'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "Backend"
+        children: 'Backend'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "Relational Database"
+        children: 'Relational Database'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "MVC"
+        children: 'MVC'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "RESTful APIs"
+        children: 'RESTful APIs'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "Ruby on Rails"
+        children: 'Ruby on Rails'
       }, void 0), (0, _jsxRuntime.jsx)("li", {
-        children: "Go"
+        children: 'Go'
       }, void 0)]
     }, void 0)]
   }), void 0);
@@ -87580,14 +87580,14 @@ var Home = function () {
       component: _reactRouterDom.Link,
       to: "/styled"
     }, {
-      children: "Yes"
+      children: 'Yes'
     }), void 0), (0, _jsxRuntime.jsx)("br", {}, void 0), (0, _jsxRuntime.jsx)("br", {}, void 0), isShowButton && (0, _jsxRuntime.jsx)(_core.Button, __assign({
       variant: "contained",
       color: "primary",
       component: _reactRouterDom.Link,
-      to: "/searchpage"
+      to: "/searchPage"
     }, {
-      children: "Jump to search page!"
+      children: 'Jump to search page!'
     }), void 0)]
   }, void 0);
 };
@@ -87631,16 +87631,16 @@ var __assign = void 0 && (void 0).__assign || function () {
 var useStyles = (0, _core.makeStyles)(function () {
   return {
     checkbox: {
-      "&$checked": {
-        color: "#F5B369"
+      '&$checked': {
+        color: '#F5B369'
       }
     },
     checked: {},
     grid: {
-      paddingTop: "10vh"
+      paddingTop: '10vh'
     },
     list: {
-      width: "30vw"
+      width: '30vw'
     }
   };
 });
@@ -87661,7 +87661,7 @@ var StyledList = function () {
     }, {
       children: (0, _jsxRuntime.jsx)(_typewriterEffect.default, {
         options: {
-          cursor: ""
+          cursor: ''
         },
         onInit: function (typewriter) {
           typewriter.changeDelay(80).typeString("Here's a slightly nicer list.").start();
@@ -87717,7 +87717,7 @@ var StyledList = function () {
       component: _reactRouterDom.Link,
       to: "/"
     }, {
-      children: "Back to Home"
+      children: 'Back to Home'
     }), void 0)]
   }), void 0);
 };
@@ -87759,9 +87759,9 @@ var __assign = void 0 && (void 0).__assign || function () {
 var useStyles = (0, _core.makeStyles)(function () {
   return {
     page: {
-      backgroundColor: "#D7EAE9",
-      minHeight: "100vh",
-      height: "100%"
+      backgroundColor: '#D7EAE9',
+      minHeight: '100vh',
+      height: '100%'
     }
   };
 });
@@ -87777,7 +87777,7 @@ var StyledPage = function () {
 
 var _default = StyledPage;
 exports.default = _default;
-},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","../components/StyledList":"../src/components/StyledList.tsx","react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"../src/components/SearchBar.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","../components/StyledList":"../src/components/StyledList.tsx","react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"../src/components/SearchBar.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87785,22 +87785,26 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const SearchBar = props => {
-  return /*#__PURE__*/_react.default.createElement("input", {
-    className: "input input__lg1",
-    value: props.input ? props.input : "",
+var SearchBar = function (props) {
+  return (0, _jsxRuntime.jsx)("input", {
+    className: "input__lg1",
+    value: props.input ? props.input : '',
     placeholder: "search web dev tools/concepts",
-    onChange: e => props.onChange(e.target.value)
-  });
+    onChange: function (e) {
+      return props.onChange(e.target.value);
+    }
+  }, void 0);
 };
 
 var _default = SearchBar;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../src/components/WebToolsList.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../src/components/WebToolsList.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87808,26 +87812,32 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const WebToolsList = props => {
-  const webToolsList = props.webToolsList;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, webToolsList.map((data, index) => {
-    if (data) {
-      return /*#__PURE__*/_react.default.createElement("div", {
-        key: data
-      }, /*#__PURE__*/_react.default.createElement("p", null, data));
-    } else {
-      return null;
-    }
-  }));
+var WebToolsList = function (props) {
+  var webToolsList = props.webToolsList;
+  return (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    children: webToolsList.map(function (data, index) {
+      if (data) {
+        return (0, _jsxRuntime.jsx)("div", {
+          children: (0, _jsxRuntime.jsx)("p", {
+            children: data
+          }, void 0)
+        }, data);
+      } else {
+        return null;
+      }
+    })
+  }, void 0);
 };
 
 var _default = WebToolsList;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../src/pages/SearchPage.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../src/pages/SearchPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87854,12 +87864,12 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const SearchPage = props => {
-  const [searchQuery, setSearchQuery] = (0, _react.useState)("");
-  const [allTools, setAllTools] = (0, _react.useState)([""]);
-  const [filteredTools, setFilteredTools] = (0, _react.useState)([""]); // const data = ["Bob", "Jen", "Dave", "Ash"];
+  const [searchQuery, setSearchQuery] = (0, _react.useState)('');
+  const [allTools, setAllTools] = (0, _react.useState)(['']);
+  const [filteredTools, setFilteredTools] = (0, _react.useState)(['']);
 
   async function fetchData() {
-    console.log("Fetching data");
+    console.log('Fetching data');
     const allTools = [];
 
     const basicList = _BasicList.default.call();
@@ -87873,7 +87883,7 @@ const SearchPage = props => {
 
 
     setAllTools(allTools);
-    console.log("allTools: ", allTools);
+    console.log('allTools: ', allTools);
   }
 
   const updateInput = input => {
@@ -87887,7 +87897,7 @@ const SearchPage = props => {
   (0, _react.useEffect)(() => {
     fetchData();
   }, []);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Search page: development tools"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("span", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, 'Search page: development tools'), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("span", {
     className: "SearchBar"
   }, /*#__PURE__*/_react.default.createElement(_SearchBar.default, {
     className: "SearchBar",
@@ -87895,17 +87905,17 @@ const SearchPage = props => {
     onChange: updateInput
   })), /*#__PURE__*/_react.default.createElement(_WebToolsList.default, {
     webToolsList: filteredTools
-  }), /*#__PURE__*/_react.default.createElement("p", null, "Showing you the full list"), /*#__PURE__*/_react.default.createElement(_BasicList.default, null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_core.Button, {
+  }), /*#__PURE__*/_react.default.createElement("p", null, 'Showing you the full list'), /*#__PURE__*/_react.default.createElement(_BasicList.default, null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_core.Button, {
     variant: "contained",
     color: "secondary",
     component: _reactRouterDom.Link,
     to: "/"
-  }, "Back to Home"));
+  }, 'Back to Home'));
 };
 
 var _default = SearchPage;
 exports.default = _default;
-},{"../components/BasicList":"../src/components/BasicList.tsx","../components/SearchBar":"../src/components/SearchBar.js","../components/WebToolsList":"../src/components/WebToolsList.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","react":"../node_modules/react/index.js"}],"../src/pages/TodoApp.tsx":[function(require,module,exports) {
+},{"../components/BasicList":"../src/components/BasicList.tsx","../components/SearchBar":"../src/components/SearchBar.tsx","../components/WebToolsList":"../src/components/WebToolsList.tsx","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","react":"../node_modules/react/index.js"}],"../src/pages/TodoApp.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87938,7 +87948,7 @@ var TodoApp = function (props) {
     className: "todoapp stack-large"
   }, {
     children: [(0, _jsxRuntime.jsx)("h1", {
-      children: "TodoMatic"
+      children: 'TodoMatic'
     }, void 0), (0, _jsxRuntime.jsxs)("form", {
       children: [(0, _jsxRuntime.jsx)("h2", __assign({
         className: "label-wrapper"
@@ -87947,7 +87957,7 @@ var TodoApp = function (props) {
           htmlFor: "new-todo-input",
           className: "label__lg"
         }, {
-          children: "What needs to be done?"
+          children: 'What needs to be done?'
         }), void 0)
       }), void 0), (0, _jsxRuntime.jsx)("input", {
         type: "text",
@@ -87959,7 +87969,7 @@ var TodoApp = function (props) {
         type: "submit",
         className: "btn btn__primary btn__lg"
       }, {
-        children: "Add"
+        children: 'Add'
       }), void 0)]
     }, void 0), (0, _jsxRuntime.jsxs)("div", __assign({
       className: "filters btn-group stack-exception"
@@ -87972,13 +87982,13 @@ var TodoApp = function (props) {
         children: [(0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: "Show "
+          children: 'Show '
         }), void 0), (0, _jsxRuntime.jsx)("span", {
           children: "all"
         }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
-          className: "visually-hidden"
+          className: 'visually-hidden'
         }, {
-          children: " Tasks"
+          children: ' Tasks'
         }), void 0)]
       }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
         type: "button",
@@ -87988,13 +87998,13 @@ var TodoApp = function (props) {
         children: [(0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: "Show "
+          children: 'Show '
         }), void 0), (0, _jsxRuntime.jsx)("span", {
           children: "Active"
         }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
-          className: "visually-hidden"
+          className: 'visually-hidden'
         }, {
-          children: " Tasks"
+          children: ' Tasks'
         }), void 0)]
       }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
         type: "button",
@@ -88004,13 +88014,13 @@ var TodoApp = function (props) {
         children: [(0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: "Show "
+          children: 'Show '
         }), void 0), (0, _jsxRuntime.jsx)("span", {
           children: "Completed"
         }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: " Tasks"
+          children: ' Tasks'
         }), void 0)]
       }), void 0)]
     }), void 0), (0, _jsxRuntime.jsx)("h2", __assign({
@@ -88092,7 +88102,7 @@ var TodoApp = function (props) {
             type: "button",
             className: "btn btn__danger"
           }, {
-            children: ["Delete ", (0, _jsxRuntime.jsx)("span", __assign({
+            children: ["Delete", ' ', (0, _jsxRuntime.jsx)("span", __assign({
               className: "visually-hidden"
             }, {
               children: "Sleep"
@@ -88206,7 +88216,7 @@ var App = function () {
             path: "/todoApp",
             element: (0, _jsxRuntime.jsx)(_TodoApp.default, {}, void 0)
           }, void 0), (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
-            path: "/searchpage",
+            path: "/searchPage",
             element: (0, _jsxRuntime.jsx)(_SearchPage.default, {}, void 0)
           }, void 0), (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
             path: "/styled",
@@ -88312,7 +88322,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom.default.render((0, _jsxRuntime.jsx)(_react.default.StrictMode, {
   children: (0, _jsxRuntime.jsx)(_App.default, {}, void 0)
-}, void 0), document.getElementById("root"));
+}, void 0), document.getElementById('root'));
 },{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","./App":"../src/App.tsx","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./index.css":"../src/index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -88341,7 +88351,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55803" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58707" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
