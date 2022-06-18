@@ -1,7 +1,7 @@
 # CVWO Assignment Sample React App
 **Modified extensively by me**
 
-There are a few pages in this React app.
+There are a few pages in this React app. (will edit Readme.md to explain more soon)
 
 ## Getting Started
 
@@ -53,6 +53,20 @@ I use ESLint and Prettier, with the config files in `.eslintrc.json` and `.prett
 webstorm integration.
 
 The `.cache` file is used by Parcel for faster build process.
+
+### Using Webstorm debugger
+[Reference link](https://www.jetbrains.com/help/webstorm/react.html#react_running_and_debugging_debug)
+
+Excerpt from the above link:
+```
+If your application is running on localhost, you can also start the debugger from the built-in Terminal or from the Run 
+tool window.
+```
+It is explained [here](https://www.jetbrains.com/help/webstorm/react.html#ws_react_debug_localhost) but the gist is that
+after setting breakpoints, you can start the application using npm/yarn as per usual, then hold Ctrl+Shift and click 
+the URL link. WebStorm starts a debugging session with an automatically generated Debug Application configuration.
+
+For full explanation on the integration with React check [here](https://www.jetbrains.com/help/webstorm/react.html)
 
 ## Common errors encountered while coding
 - Missing in [props validation](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md):

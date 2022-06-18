@@ -4,6 +4,7 @@ type TodoProps = {
     name: string;
     isCompleted: boolean;
     id: string;
+    toggleTaskCompleted: (id: string) => void;
 };
 
 const Todo = (props: TodoProps) => {
@@ -16,6 +17,7 @@ const Todo = (props: TodoProps) => {
                     id={props.id}
                     type="checkbox"
                     defaultChecked={props.isCompleted}
+                    onChange={() => props.toggleTaskCompleted(props.id)}
                 />
                 <label className="todo-label" htmlFor={props.id}>
                     {item}

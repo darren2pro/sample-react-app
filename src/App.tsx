@@ -7,6 +7,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import { blue, orange } from '@material-ui/core/colors';
 
+const DATA = [
+    { id: 'todo-0', name: 'Eat', isCompleted: true },
+    { id: 'todo-1', name: 'Sleep', isCompleted: false },
+    { id: 'todo-2', name: 'Code', isCompleted: false },
+];
+
 const theme = createTheme({
     palette: {
         primary: blue,
@@ -20,7 +26,10 @@ const App: React.FC = () => {
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/todoApp" element={<TodoApp />} />
+                        <Route
+                            path="/todoApp"
+                            element={<TodoApp tasks={DATA} />}
+                        />
                         <Route path="/searchPage" element={<SearchPage />} />
                         <Route path="/styled" element={<StyledPage />} />
                         <Route path="/" element={<Home />} />

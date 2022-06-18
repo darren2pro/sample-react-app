@@ -81,6 +81,7 @@ input[type="text"] {
   border-radius: 0;
 }
 
+
 body {
   margin: 0 auto;
   font: 1.6rem/1.25 Arial, sans-serif;
@@ -211,10 +212,14 @@ body {
   padding: 2rem;
   border: 2px solid #000;
 }
+/* Search bar formatting */
 .input__lg1 {
   padding: 2rem;
   border: 2px solid #34de5e;
+  margin: 0px 20px 0px; /* margin specifies spacing outside the element while padding specifies spacing within the element */
+  max-width: 50em;
 }
+/* End of search bar formatting */
 
 .input__lg:focus {
   border-color: #4d4d4d;

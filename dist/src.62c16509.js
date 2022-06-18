@@ -87915,7 +87915,7 @@ const SearchPage = props => {
 
 var _default = SearchPage;
 exports.default = _default;
-},{"../components/BasicList":"../src/components/BasicList.tsx","../components/SearchBar":"../src/components/SearchBar.tsx","../components/WebToolsList":"../src/components/WebToolsList.tsx","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","react":"../node_modules/react/index.js"}],"../src/pages/TodoApp.tsx":[function(require,module,exports) {
+},{"../components/BasicList":"../src/components/BasicList.tsx","../components/SearchBar":"../src/components/SearchBar.tsx","../components/WebToolsList":"../src/components/WebToolsList.tsx","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","react":"../node_modules/react/index.js"}],"../src/components/Todo.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87943,218 +87943,378 @@ var __assign = void 0 && (void 0).__assign || function () {
   return __assign.apply(this, arguments);
 };
 
-var TodoApp = function (props) {
-  return (0, _jsxRuntime.jsxs)("div", __assign({
-    className: "todoapp stack-large"
+var Todo = function (props) {
+  var item = props.name;
+  return (0, _jsxRuntime.jsxs)("li", __assign({
+    className: "todo stack-small"
   }, {
-    children: [(0, _jsxRuntime.jsx)("h1", {
-      children: 'TodoMatic'
-    }, void 0), (0, _jsxRuntime.jsxs)("form", {
-      children: [(0, _jsxRuntime.jsx)("h2", __assign({
-        className: "label-wrapper"
+    children: [(0, _jsxRuntime.jsxs)("div", __assign({
+      className: "c-cb"
+    }, {
+      children: [(0, _jsxRuntime.jsx)("input", {
+        id: props.id,
+        type: "checkbox",
+        defaultChecked: props.isCompleted
+      }, void 0), (0, _jsxRuntime.jsx)("label", __assign({
+        className: "todo-label",
+        htmlFor: props.id
       }, {
-        children: (0, _jsxRuntime.jsx)("label", __assign({
-          htmlFor: "new-todo-input",
-          className: "label__lg"
-        }, {
-          children: 'What needs to be done?'
-        }), void 0)
-      }), void 0), (0, _jsxRuntime.jsx)("input", {
-        type: "text",
-        id: "new-todo-input",
-        className: "input input__lg",
-        name: "text",
-        autoComplete: "off"
-      }, void 0), (0, _jsxRuntime.jsx)("button", __assign({
-        type: "submit",
-        className: "btn btn__primary btn__lg"
-      }, {
-        children: 'Add'
+        children: item
       }), void 0)]
-    }, void 0), (0, _jsxRuntime.jsxs)("div", __assign({
-      className: "filters btn-group stack-exception"
+    }), void 0), (0, _jsxRuntime.jsxs)("div", __assign({
+      className: "btn-group"
     }, {
       children: [(0, _jsxRuntime.jsxs)("button", __assign({
         type: "button",
-        className: "btn toggle-btn",
-        "aria-pressed": "true"
+        className: "btn"
       }, {
-        children: [(0, _jsxRuntime.jsx)("span", __assign({
+        children: ["Edit ", (0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: 'Show '
-        }), void 0), (0, _jsxRuntime.jsx)("span", {
-          children: "all"
-        }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
-          className: 'visually-hidden'
-        }, {
-          children: ' Tasks'
+          children: item
         }), void 0)]
       }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
         type: "button",
-        className: "btn toggle-btn",
-        "aria-pressed": "false"
+        className: "btn btn__danger"
       }, {
-        children: [(0, _jsxRuntime.jsx)("span", __assign({
+        children: ["Delete ", (0, _jsxRuntime.jsx)("span", __assign({
           className: "visually-hidden"
         }, {
-          children: 'Show '
-        }), void 0), (0, _jsxRuntime.jsx)("span", {
-          children: "Active"
-        }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
-          className: 'visually-hidden'
-        }, {
-          children: ' Tasks'
-        }), void 0)]
-      }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
-        type: "button",
-        className: "btn toggle-btn",
-        "aria-pressed": "false"
-      }, {
-        children: [(0, _jsxRuntime.jsx)("span", __assign({
-          className: "visually-hidden"
-        }, {
-          children: 'Show '
-        }), void 0), (0, _jsxRuntime.jsx)("span", {
-          children: "Completed"
-        }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
-          className: "visually-hidden"
-        }, {
-          children: ' Tasks'
-        }), void 0)]
-      }), void 0)]
-    }), void 0), (0, _jsxRuntime.jsx)("h2", __assign({
-      id: "list-heading"
-    }, {
-      children: "3 tasks remaining"
-    }), void 0), (0, _jsxRuntime.jsxs)("ul", __assign({
-      role: "list",
-      className: "todo-list stack-large stack-exception",
-      "aria-labelledby": "list-heading"
-    }, {
-      children: [(0, _jsxRuntime.jsxs)("li", __assign({
-        className: "todo stack-small"
-      }, {
-        children: [(0, _jsxRuntime.jsxs)("div", __assign({
-          className: "c-cb"
-        }, {
-          children: [(0, _jsxRuntime.jsx)("input", {
-            id: "todo-0",
-            type: "checkbox",
-            defaultChecked: true
-          }, void 0), (0, _jsxRuntime.jsx)("label", __assign({
-            className: "todo-label",
-            htmlFor: "todo-0"
-          }, {
-            children: "Eat"
-          }), void 0)]
-        }), void 0), (0, _jsxRuntime.jsxs)("div", __assign({
-          className: "btn-group"
-        }, {
-          children: [(0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn"
-          }, {
-            children: ["Edit ", (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Eat"
-            }), void 0)]
-          }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn btn__danger"
-          }, {
-            children: ["Delete ", (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Eat"
-            }), void 0)]
-          }), void 0)]
-        }), void 0)]
-      }), void 0), (0, _jsxRuntime.jsxs)("li", __assign({
-        className: "todo stack-small"
-      }, {
-        children: [(0, _jsxRuntime.jsxs)("div", __assign({
-          className: "c-cb"
-        }, {
-          children: [(0, _jsxRuntime.jsx)("input", {
-            id: "todo-1",
-            type: "checkbox"
-          }, void 0), (0, _jsxRuntime.jsx)("label", __assign({
-            className: "todo-label",
-            htmlFor: "todo-1"
-          }, {
-            children: "Sleep"
-          }), void 0)]
-        }), void 0), (0, _jsxRuntime.jsxs)("div", __assign({
-          className: "btn-group"
-        }, {
-          children: [(0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn"
-          }, {
-            children: ["Edit ", (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Sleep"
-            }), void 0)]
-          }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn btn__danger"
-          }, {
-            children: ["Delete", ' ', (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Sleep"
-            }), void 0)]
-          }), void 0)]
-        }), void 0)]
-      }), void 0), (0, _jsxRuntime.jsxs)("li", __assign({
-        className: "todo stack-small"
-      }, {
-        children: [(0, _jsxRuntime.jsxs)("div", __assign({
-          className: "c-cb"
-        }, {
-          children: [(0, _jsxRuntime.jsx)("input", {
-            id: "todo-2",
-            type: "checkbox"
-          }, void 0), (0, _jsxRuntime.jsx)("label", __assign({
-            className: "todo-label",
-            htmlFor: "todo-2"
-          }, {
-            children: "Code"
-          }), void 0)]
-        }), void 0), (0, _jsxRuntime.jsxs)("div", __assign({
-          className: "btn-group"
-        }, {
-          children: [(0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn"
-          }, {
-            children: ["Edit ", (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Code"
-            }), void 0)]
-          }), void 0), (0, _jsxRuntime.jsxs)("button", __assign({
-            type: "button",
-            className: "btn btn__danger"
-          }, {
-            children: ["Delete ", (0, _jsxRuntime.jsx)("span", __assign({
-              className: "visually-hidden"
-            }, {
-              children: "Code"
-            }), void 0)]
-          }), void 0)]
+          children: item
         }), void 0)]
       }), void 0)]
     }), void 0)]
   }), void 0);
 };
 
+var _default = Todo;
+exports.default = _default;
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../src/components/Form.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var Form = function (props) {
+  var _a = (0, _react.useState)(''),
+      name = _a[0],
+      setName = _a[1];
+
+  function handleSubmit(event) {
+    // Should usually prevent default behaviour of submit event because you want to check that data was entered correctly
+    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#preventing_default_behavior
+    event.preventDefault();
+
+    if (!name) {
+      alert('Cannot add empty task');
+      return;
+    }
+
+    props.addTask(name);
+    setName('');
+  }
+
+  function handleChange(event) {
+    setName(event.target.value);
+  }
+
+  return (0, _jsxRuntime.jsxs)("form", __assign({
+    onSubmit: handleSubmit
+  }, {
+    children: [(0, _jsxRuntime.jsx)("h2", __assign({
+      className: "label-wrapper"
+    }, {
+      children: (0, _jsxRuntime.jsx)("label", __assign({
+        htmlFor: "new-todo-input",
+        className: "label__lg"
+      }, {
+        children: 'What needs to be done?'
+      }), void 0)
+    }), void 0), (0, _jsxRuntime.jsx)("input", {
+      type: "text",
+      id: "new-todo-input",
+      className: "input input__lg",
+      name: "text",
+      autoComplete: "off",
+      value: name,
+      onChange: handleChange
+    }, void 0), (0, _jsxRuntime.jsx)("button", __assign({
+      type: "submit",
+      className: "btn btn__primary btn__lg"
+    }, {
+      children: 'Add'
+    }), void 0)]
+  }), void 0);
+};
+
+var _default = Form;
+exports.default = _default;
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../src/components/FilterButton.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var FilterButton = function (props) {
+  return (0, _jsxRuntime.jsxs)("button", __assign({
+    type: "button",
+    className: "btn toggle-btn",
+    "aria-pressed": "true"
+  }, {
+    children: [(0, _jsxRuntime.jsx)("span", __assign({
+      className: "visually-hidden"
+    }, {
+      children: 'Show '
+    }), void 0), (0, _jsxRuntime.jsx)("span", {
+      children: "all"
+    }, void 0), (0, _jsxRuntime.jsx)("span", __assign({
+      className: 'visually-hidden'
+    }, {
+      children: ' Tasks'
+    }), void 0)]
+  }), void 0);
+};
+
+var _default = FilterButton;
+exports.default = _default;
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../node_modules/nanoid/url-alphabet/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.urlAlphabet = void 0;
+let urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict';
+exports.urlAlphabet = urlAlphabet;
+},{}],"../node_modules/nanoid/index.browser.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.random = exports.nanoid = exports.customRandom = exports.customAlphabet = void 0;
+Object.defineProperty(exports, "urlAlphabet", {
+  enumerable: true,
+  get: function () {
+    return _index.urlAlphabet;
+  }
+});
+
+var _index = require("./url-alphabet/index.js");
+
+if ("development" !== 'production') {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative' && typeof crypto === 'undefined') {
+    throw new Error('React Native does not have a built-in secure random generator. ' + 'If you don’t need unpredictable IDs use `nanoid/non-secure`. ' + 'For secure IDs, import `react-native-get-random-values` ' + 'before Nano ID.');
+  }
+
+  if (typeof msCrypto !== 'undefined' && typeof crypto === 'undefined') {
+    throw new Error('Import file with `if (!window.crypto) window.crypto = window.msCrypto`' + ' before importing Nano ID to fix IE 11 support');
+  }
+
+  if (typeof crypto === 'undefined') {
+    throw new Error('Your browser does not have secure random generator. ' + 'If you don’t need unpredictable IDs, you can use nanoid/non-secure.');
+  }
+}
+
+let random = bytes => crypto.getRandomValues(new Uint8Array(bytes));
+
+exports.random = random;
+
+let customRandom = (alphabet, size, getRandom) => {
+  let mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
+  let step = -~(1.6 * mask * size / alphabet.length);
+  return () => {
+    let id = '';
+
+    while (true) {
+      let bytes = getRandom(step);
+      let j = step;
+
+      while (j--) {
+        id += alphabet[bytes[j] & mask] || '';
+        if (id.length === size) return id;
+      }
+    }
+  };
+};
+
+exports.customRandom = customRandom;
+
+let customAlphabet = (alphabet, size) => customRandom(alphabet, size, random);
+
+exports.customAlphabet = customAlphabet;
+
+let nanoid = function () {
+  let size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 21;
+  let id = '';
+  let bytes = crypto.getRandomValues(new Uint8Array(size));
+
+  while (size--) {
+    let byte = bytes[size] & 63;
+
+    if (byte < 36) {
+      id += byte.toString(36);
+    } else if (byte < 62) {
+      id += (byte - 26).toString(36).toUpperCase();
+    } else if (byte < 63) {
+      id += '_';
+    } else {
+      id += '-';
+    }
+  }
+
+  return id;
+};
+
+exports.nanoid = nanoid;
+},{"./url-alphabet/index.js":"../node_modules/nanoid/url-alphabet/index.js"}],"../src/pages/TodoApp.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _Todo = _interopRequireDefault(require("../components/Todo"));
+
+var _Form = _interopRequireDefault(require("../components/Form"));
+
+var _FilterButton = _interopRequireDefault(require("../components/FilterButton"));
+
+var _nanoid = require("nanoid");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var __spreadArray = void 0 && (void 0).__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
+
+var TodoApp = function (props) {
+  var _a = (0, _react.useState)(props.tasks),
+      tasks = _a[0],
+      setTasks = _a[1];
+
+  var addTask = function (taskName) {
+    var generatedId = (0, _nanoid.nanoid)();
+    var newTask = {
+      id: "todo-".concat(generatedId),
+      name: taskName,
+      isCompleted: false
+    };
+    setTasks(__spreadArray(__spreadArray([], tasks, true), [newTask], false));
+  };
+
+  var taskList = tasks.map(function (task) {
+    return (// You should always pass a unique key to anything you render with iteration
+      (0, _jsxRuntime.jsx)(_Todo.default, {
+        id: task.id,
+        name: task.name,
+        isCompleted: task.isCompleted
+      }, task.id)
+    );
+  });
+  return (0, _jsxRuntime.jsxs)("div", __assign({
+    className: "todoapp stack-large"
+  }, {
+    children: [(0, _jsxRuntime.jsx)("h1", {
+      children: 'TodoMatic'
+    }, void 0), (0, _jsxRuntime.jsx)(_Form.default, {
+      addTask: addTask
+    }, void 0), (0, _jsxRuntime.jsxs)("div", __assign({
+      className: "filters btn-group stack-exception"
+    }, {
+      children: [(0, _jsxRuntime.jsx)(_FilterButton.default, {}, void 0), (0, _jsxRuntime.jsx)(_FilterButton.default, {}, void 0), (0, _jsxRuntime.jsx)(_FilterButton.default, {}, void 0)]
+    }), void 0), (0, _jsxRuntime.jsx)("h2", __assign({
+      id: "list-heading"
+    }, {
+      children: "3 tasks remaining"
+    }), void 0), (0, _jsxRuntime.jsx)("ul", __assign({
+      role: "list",
+      className: "todo-list stack-large stack-exception",
+      "aria-labelledby": "list-heading"
+    }, {
+      children: taskList
+    }), void 0)]
+  }), void 0);
+};
+
 var _default = TodoApp;
 exports.default = _default;
-},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js"}],"../src/App.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js","../components/Todo":"../src/components/Todo.tsx","../components/Form":"../src/components/Form.tsx","../components/FilterButton":"../src/components/FilterButton.tsx","nanoid":"../node_modules/nanoid/index.browser.js"}],"../src/App.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -88196,6 +88356,19 @@ var __assign = void 0 && (void 0).__assign || function () {
   return __assign.apply(this, arguments);
 };
 
+var DATA = [{
+  id: 'todo-0',
+  name: 'Eat',
+  isCompleted: true
+}, {
+  id: 'todo-1',
+  name: 'Sleep',
+  isCompleted: false
+}, {
+  id: 'todo-2',
+  name: 'Code',
+  isCompleted: false
+}];
 var theme = (0, _core.createTheme)({
   palette: {
     primary: _colors.blue,
@@ -88214,7 +88387,9 @@ var App = function () {
         children: (0, _jsxRuntime.jsxs)(_reactRouterDom.Routes, {
           children: [(0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
             path: "/todoApp",
-            element: (0, _jsxRuntime.jsx)(_TodoApp.default, {}, void 0)
+            element: (0, _jsxRuntime.jsx)(_TodoApp.default, {
+              tasks: DATA
+            }, void 0)
           }, void 0), (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
             path: "/searchPage",
             element: (0, _jsxRuntime.jsx)(_SearchPage.default, {}, void 0)
@@ -88351,7 +88526,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49991" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
