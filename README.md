@@ -1,18 +1,25 @@
 # CVWO Assignment Sample React App
 **Modified extensively by me**
 
-There are a few pages in this React app. (will edit Readme.md to explain more soon)
+## Description
+There are a few pages in this React app. At the home page, you will see a page like this.
+![homePage](public/images/homePage.png)
+
+From here you can navigate to the searchPage where you can type words into the search bar and the webpage will show you
+a filtered list of the given items.
+![searchPage](public/images/searchPage.png)
+
+You could also navigate to the todoApp webpage as shown below, where you can add, remove, and complete items, and the 
+webpage will respond accordingly.
+![todoApp](public/images/todoApp.png)
 
 ## Getting Started
-
 ### Running the app
 1. Open your terminal and navigate to the directory containing your cloned project.
 2. Install dependencies for the project by using `yarn install` or `npm install`.
 3. Run the app in development mode by using `yarn start` or `npm start` or `npm run parcel-start`.
 4. Open [http://localhost:3000](http://localhost:3000) or [http://localhost:1234](http://localhost:1234) (for Parcel) 
 to view it in the browser.
-5. You should see a page like this.
-![Basic Page](public/images/BasicPage.png)
 
 ### Navigating the code
 This is the main file structure
@@ -56,20 +63,19 @@ The `.cache` file is used by Parcel for faster build process.
 
 ### Using Webstorm debugger
 [Reference link](https://www.jetbrains.com/help/webstorm/react.html#react_running_and_debugging_debug)
-
 Excerpt from the above link:
-```
-If your application is running on localhost, you can also start the debugger from the built-in Terminal or from the Run 
-tool window.
-```
+
+> If your application is running on localhost, you can also start the debugger from the built-in Terminal or from the Run 
+> tool window.
+
 It is explained [here](https://www.jetbrains.com/help/webstorm/react.html#ws_react_debug_localhost) but the gist is that
 after setting breakpoints, you can start the application using npm/yarn as per usual, then hold Ctrl+Shift and click 
 the URL link. WebStorm starts a debugging session with an automatically generated Debug Application configuration.
 
-For full explanation on the integration with React check [here](https://www.jetbrains.com/help/webstorm/react.html)
+For full explanation on the webstorm-React integration check [here](https://www.jetbrains.com/help/webstorm/react.html).
 
 ## Common errors encountered while coding
-- Missing in [props validation](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md):
+- Missing properties in [props validation](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md):
 You can fix this by providing the types statically using TypeScript using either `type` or `interface`. 
 _Interface is extendable but type is simply an alias._ 
 
