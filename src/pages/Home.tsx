@@ -24,6 +24,14 @@ const Home: React.FC = () => {
             <br />
             <BasicList />
             <br />
+            <Button
+                variant="contained"
+                color="primary"
+                component={Link}
+                to="/todoApp"
+            >
+                {"Visit the Todo App!"}
+            </Button>
             <Typewriter
                 onInit={(typewriter) => {
                     hideButton();

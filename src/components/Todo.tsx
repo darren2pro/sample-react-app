@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 type TodoProps = {
     name: string;
@@ -9,13 +9,26 @@ type TodoProps = {
     editTask: (id: string, newName: string) => void;
 };
 
+export function usePrevious(value: boolean | number): boolean | number | undefined {
+    const ref = useRef();
+    useEffect(() => {
+        // @ts-ignore - assigning boolean to the ref's current value is allowed
+        ref.current = value;
+    });
+    return ref.current;
+}
+
 const Todo = (props: TodoProps) => {
     const item = props.name;
     const [isEditing, setIsEditing] = useState(false);
+    const wasEditing = usePrevious(isEditing);
     const [newName, setNewName] = useState(item);
 
+    // Used for keyboard-only users and screen-reader users, so the in-focus html element doesn't get lost
+    const editFieldRef = useRef(null);
+    const editButtonRef = useRef(null);
+
     function handleNewNameChange(event: React.ChangeEvent<HTMLInputElement>) {
-        console.log('New target value: ' + event.target.value);
         setNewName(event.target.value);
     }
 
@@ -44,6 +57,7 @@ const Todo = (props: TodoProps) => {
                     type="button"
                     className="btn"
                     onClick={() => setIsEditing(true)}
+                    ref={editButtonRef}
                 >
                     Edit <span className="visually-hidden">{item}</span>
                 </button>
@@ -70,6 +84,7 @@ const Todo = (props: TodoProps) => {
                     type="text"
                     value={newName}
                     onChange={handleNewNameChange}
+                    ref={editFieldRef}
                 />
             </div>
             <div className="btn-group">
@@ -88,6 +103,17 @@ const Todo = (props: TodoProps) => {
             </div>
         </form>
     );
+
+    useEffect(() => {
+        if (!wasEditing && isEditing) {
+            // @ts-ignore - will never be null because I set the ref already
+            editFieldRef.current.focus();
+        }
+        if (wasEditing && !isEditing) {
+            // @ts-ignore - will never be null because I set the ref already
+            editButtonRef.current.focus();
+        }
+    }, [wasEditing, isEditing]);
 
     return <li className="todo">{isEditing ? editTemplate : viewTemplate}</li>;
 };
