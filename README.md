@@ -69,8 +69,9 @@ Excerpt from the above link:
 > tool window.
 
 It is explained [here](https://www.jetbrains.com/help/webstorm/react.html#ws_react_debug_localhost) but the gist is that
-after setting breakpoints, you can start the application using npm/yarn as per usual, then hold Ctrl+Shift and click 
-the URL link. WebStorm starts a debugging session with an automatically generated Debug Application configuration.
+after setting breakpoints (must be done before launching the debugger), you can start the application using npm/yarn as 
+per usual, then hold Ctrl+Shift and click the URL link. WebStorm starts a debugging session with an automatically 
+generated Debug Application configuration.
 
 For full explanation on the webstorm-React integration check [here](https://www.jetbrains.com/help/webstorm/react.html).
 

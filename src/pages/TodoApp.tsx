@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Todo from '../components/Todo';
 import Form from '../components/Form';
 import FilterButton from '../components/FilterButton';
-import { nanoid } from "nanoid";
+import { nanoid } from 'nanoid';
 
 type TodoItem = {
     id: string;
@@ -14,8 +14,34 @@ type TodoAppProps = {
     tasks: TodoItem[];
 };
 
+export enum FilterState {
+    All = 'All',
+    Active = 'Active',
+    Completed = 'Completed',
+}
+
+const FILTER_MAP = {
+    [FilterState.All]: () => true,
+    [FilterState.Active]: (task: TodoItem) => !task.isCompleted,
+    [FilterState.Completed]: (task: TodoItem) => task.isCompleted,
+};
+
+// Casting from type string to FilterState
+const FILTER_NAMES_STATE = Object.keys(FILTER_MAP).map(
+    (key) => key as FilterState
+);
+
 const TodoApp = (props: TodoAppProps) => {
     const [tasks, setTasks] = useState(props.tasks);
+    const [filterState, setFilterState] = useState(FilterState.All);
+    const filteredTasksButton = FILTER_NAMES_STATE.map((name) => (
+        <FilterButton
+            key={name}
+            name={name}
+            isPressed={name === filterState}
+            setFilterState={setFilterState}
+        />
+    ));
 
     const addTask = (taskName: string) => {
         const generatedId = nanoid();
@@ -23,19 +49,37 @@ const TodoApp = (props: TodoAppProps) => {
         const newTask: TodoItem = {
             id: `todo-${generatedId}`,
             name: taskName,
-            isCompleted: false
+            isCompleted: false,
         };
         setTasks([...tasks, newTask]);
     };
 
     function toggleTaskCompleted(id: string) {
-        const toggledTask = tasks.find(task => task.id === id);
+        const toggledTask = tasks.find((task) => task.id === id);
         if (toggledTask) {
             toggledTask.isCompleted = !toggledTask.isCompleted;
         }
     }
 
-    const taskList = tasks.map((task) => (
+    function deleteTask(id: string) {
+        const filteredTasks = tasks.filter((task) => task.id !== id);
+        setTasks(filteredTasks);
+    }
+
+    function editTask(id: string, newName: string) {
+        const editedTaskList = tasks.map((task) => {
+            if (task.id === id) {
+                // Object destructuring syntax
+                return { ...task, name: newName };
+            }
+            return task;
+        });
+        setTasks(editedTaskList);
+    }
+
+    const taskList = tasks
+        .filter(FILTER_MAP[filterState])
+        .map((task) => (
         // You should always pass a unique key to anything you render with iteration
         <Todo
             key={task.id}
@@ -43,6 +87,8 @@ const TodoApp = (props: TodoAppProps) => {
             name={task.name}
             isCompleted={task.isCompleted}
             toggleTaskCompleted={toggleTaskCompleted}
+            deleteTask={deleteTask}
+            editTask={editTask}
         />
     ));
 
@@ -55,9 +101,7 @@ const TodoApp = (props: TodoAppProps) => {
             <h1>{'TodoMatic'}</h1>
             <Form addTask={addTask} />
             <div className="filters btn-group stack-exception">
-                <FilterButton />
-                <FilterButton />
-                <FilterButton />
+                {filteredTasksButton}
             </div>
             <h2 id="list-heading">{headingText}</h2>
             {/*
